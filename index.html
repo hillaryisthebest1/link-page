@@ -1,56 +1,633 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Omawumi Links</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            background-color: #0f172a;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            color: white;
-        }
+<title>Omawumi's Corner ✨</title>
 
-        h1 {
-             <img src="https://i.pinimg.com/736x/47/0f/83/470f834b12539297febbb18395cf8b88.jpg" width="100" style="border-radius: 50%; 
-            margin-bottom: 10px;
-        }
+<style>
 
-        p {
-            margin-bottom: 30px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-        a {
-            display: block;
-            background-color: #020617;
-            color: black;
-            text-decoration: none;
-            padding: 15px;
-            margin: 10px auto;
-            width: 250px;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+body{
+font-family:Arial, sans-serif;
+background:#faf7f7;
+color:#333;
+line-height:1.6;
+transition:0.4s;
+}
 
-        a:hover {
-            background-color: #0ea5e9;
-        }
-    </style>
+/* DARK MODE */
+
+.dark-mode{
+background:#2b0b16;
+color:white;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+/* TOP BUTTONS */
+
+.top-buttons{
+position:fixed;
+top:15px;
+left:15px;
+display:flex;
+gap:10px;
+z-index:1000;
+}
+
+.top-btn{
+background:#8B0000;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:15px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 15px rgba(139,0,0,0.3);
+}
+
+.top-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(139,0,0,0.7);
+}
+
+/* HERO */
+
+.hero{
+padding:110px 20px 80px;
+text-align:center;
+animation:fadeIn 1s ease;
+}
+
+.hero img{
+width:350px;
+max-width:90%;
+border-radius:25px;
+margin-bottom:30px;
+box-shadow:0 0 25px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.hero img:hover{
+transform:scale(1.02);
+}
+
+.hero h1{
+font-size:58px;
+color:#8B0000;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+/* BUTTONS */
+
+.main-btn{
+display:inline-block;
+padding:15px 30px;
+background:#8B0000;
+color:white;
+text-decoration:none;
+border-radius:15px;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 15px rgba(139,0,0,0.3);
+}
+
+.main-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(139,0,0,0.8);
+}
+
+/* HEADINGS */
+
+section{
+padding:70px 20px;
+}
+
+section h2{
+text-align:center;
+font-size:35px;
+margin-bottom:35px;
+color:#8B0000;
+}
+
+/* ABOUT */
+
+.about{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.about img{
+width:300px;
+max-width:90%;
+border-radius:25px;
+box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+.about-text{
+max-width:500px;
+font-size:18px;
+}
+
+/* GRID */
+
+.grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+/* CARDS */
+
+.card{
+background:white;
+width:300px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(139,0,0,0.25);
+}
+
+.dark-mode .card{
+background:#441221;
+}
+
+/* SOCIALS */
+
+.socials{
+text-align:center;
+}
+
+.social-btn{
+display:inline-block;
+margin:8px;
+padding:12px 22px;
+background:#8B0000;
+color:white;
+text-decoration:none;
+border-radius:15px;
+transition:0.3s;
+}
+
+.social-btn:hover{
+box-shadow:0 0 20px rgba(139,0,0,0.8);
+transform:translateY(-3px);
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+/* QUOTE */
+
+.quote-card{
+max-width:700px;
+margin:auto;
+text-align:center;
+font-size:22px;
+font-style:italic;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:60px 20px;
+margin-top:40px;
+}
+
+footer p{
+margin:10px 0;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.card{
+width:90%;
+}
+
+.about{
+flex-direction:column;
+}
+
+.top-buttons{
+flex-direction:column;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <h1>Omawumi 💻✨</h1>
-    <p>Web designer & Canva creator</p>
+<div class="top-buttons">
 
-    <a href="https://instagram.com/hillary79021.creates" target="_blank">📱 My Instagram</a>
+<button class="top-btn" onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
 
-<a href="mailto:omawumi.hillary@outlook.com">📩 Contact Me</a>
+<button class="top-btn"
+onclick="window.open('https://open.spotify.com/track/66R1GOq1z0YaekUyzPVKFq?si=70c1765770274166','_blank')">
+🎵 Music
+</button>
 
-<a href="#">💻 My Website Projects</a>
+</div>
 
-<a href="#">🎨 My Designs</a>
+<div class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="https://i.pinimg.com/736x/0c/a6/33/0ca63396c0d57f3e1046a5a5c4e451ae.jpg">
+
+<h1>Hi, I'm Omawumi ✨</h1>
+
+<p>
+Student 📚 • Web Design Learner 💻 • Creator ✨
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="main-btn">
+💻 View My Projects & Designs
+</a>
+
+<a href="https://www.instagram.com/hillary79021.creates/"
+target="_blank"
+class="main-btn">
+📸 Instagram
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+<h2>💖 About Me</h2>
+
+<div class="about">
+
+<img src="https://i.pinimg.com/736x/81/83/6b/81836be591039469727d09efc4dcb376.jpg">
+
+<div class="about-text">
+
+<p>
+Hi! I'm Omawumi 💖
+<br><br>
+I'm a student who enjoys learning web design and coding.
+I love creating projects, exploring new ideas and sharing my journey as I continue to learn and grow ✨
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2>💻 Projects & Designs</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎂 Pink Cake Paradise</h3>
+
+<br>
+
+<p>
+A luxury bakery website with a soft aesthetic design,
+customer reviews and contact section.
+</p>
+
+<br>
+
+<a href="https://hillaryisthebest1.github.io/cake-shop-website/"
+target="_blank"
+class="main-btn">
+View Project ✨
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 Link In Bio Website</h3>
+
+<br>
+
+<p>
+A personal links page connecting socials,
+projects and online content.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>✨ More Coming Soon</h3>
+
+<br>
+
+<p>
+More creative projects are on the way.
+Stay tuned 😭💖
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOCIALS -->
+
+<section>
+
+<h2>🌍 Socials</h2>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/hillary79021.creates/"
+target="_blank"
+class="social-btn">
+📸 Instagram
+</a>
+
+<a href="https://www.tiktok.com/@gloriousoma"
+target="_blank"
+class="social-btn">
+🎵 TikTok
+</a>
+
+<a href="https://www.pinterest.com/omawumihillary/"
+target="_blank"
+class="social-btn">
+📌 Pinterest
+</a>
+
+<a href="https://discord.gg/CMeDwmZ7"
+target="_blank"
+class="social-btn">
+🎮 Coding Community
+</a>
+
+</div>
+
+</section>
+
+<!-- GOALS -->
+
+<section>
+
+<h2>🎯 Current Goals</h2>
+
+<div class="grid">
+
+<div class="card">
+🌍 Build More Websites
+</div>
+
+<div class="card">
+💻 Improve Coding Skills
+</div>
+
+<div class="card">
+📚 Do Well In School
+</div>
+
+<div class="card">
+✨ Grow My Portfolio
+</div>
+
+</div>
+
+</section>
+
+<!-- CREATIVE JOURNEY -->
+
+<section>
+
+<h2>✨ My Creative Journey</h2>
+
+<p style="text-align:center; margin-bottom:30px;">
+A faceless look into what I'm building,
+learning and exploring 💻💖
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>💻 Website Update</h3>
+
+<br>
+
+<p>
+Improved layouts and learned more about responsive web design.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Exam Journey</h3>
+
+<br>
+
+<p>
+Focused on revision while continuing to build creative projects.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 Omawumi's Corner</h3>
+
+<br>
+
+<p>
+Designing my personal corner of the internet.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIFE UPDATES -->
+
+<section>
+
+<h2>📝 Life Updates</h2>
+
+<div class="grid">
+
+<div class="card">
+✨ Finished Exams
+</div>
+
+<div class="card">
+💻 Built Pink Cake Paradise
+</div>
+
+<div class="card">
+🌍 Published My First Website
+</div>
+
+<div class="card">
+📚 Learning More Coding
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section>
+
+<h2>📬 Contact Me</h2>
+
+<div class="contact">
+
+<p>
+Feel free to reach out, connect or say hello 💖
+</p>
+
+<br>
+
+<a href="mailto:omawumi.hillary@outlook.com"
+class="main-btn">
+📧 Send Email ✨
+</a>
+
+<br><br>
+
+<p>
+omawumi.hillary@outlook.com
+</p>
+
+</div>
+
+</section>
+
+<!-- QUOTE -->
+
+<section>
+
+<h2>💭 Favorite Quote</h2>
+
+<div class="card quote-card">
+
+"Soul too pretty to deal with ugly energy,
+lock in diva." ✨
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+✨ Thanks for visiting Omawumi's Corner of the internet.
+</p>
+
+<p>
+💖 Hope to see you again soon!
+</p>
+
+<p>
+Made with ❤️ by Omawumi
+</p>
+
+</footer>
+
+</div>
+
+<script>
+
+function toggleDarkMode(){
+
+document.body.classList.toggle("dark-mode");
+
+}
+
+</script>
 
 </body>
 </html>
